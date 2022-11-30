@@ -23,9 +23,9 @@ from multiprocessing import Pool
 # PARAMS
 SUMMARY_DIR = '../../raw_summaries/sparknotes/summaries'
 # Summary list info
-summary_list_file = "literature_links.tsv.pruned'
+summary_list_file = "literature_links.tsv.pruned"
 
-f_errors = open('section_errors.txt","w")
+f_errors = open("section_errors.txt","w")
 
 def wrap_data(name, summary, analysis, url):
     return {
@@ -195,6 +195,6 @@ def get_summary(summary_info):
         with open(output_fname, 'w', encoding="utf-8") as f:
                 f.write(json.dumps(section_data))
 
-
-with Pool(1) as p:
-    p.map(get_summary, summary_infos)
+if __name__ ==  '__main__':
+    with Pool(1) as p:
+        p.map(get_summary, summary_infos)

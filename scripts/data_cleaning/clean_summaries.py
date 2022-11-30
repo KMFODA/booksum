@@ -361,5 +361,6 @@ def clean_summary(source):
 
 n_cpus = 8
 
-with Pool(n_cpus) as p:
-    p.map(clean_summary, sources)
+if __name__ ==  '__main__':
+    with Pool(n_cpus) as p:
+        p.map(clean_summary, sources)

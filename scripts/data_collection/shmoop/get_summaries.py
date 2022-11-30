@@ -133,5 +133,6 @@ with open(summary_list_file, 'r') as tsvfile:
     reader = csv.reader(tsvfile, delimiter='\t')
     summary_infos = list(reader)
 
-with Pool(1) as p:
-    p.map(get_summary, summary_infos)
+if __name__ ==  '__main__':
+    with Pool(1) as p:
+        p.map(get_summary, summary_infos)
